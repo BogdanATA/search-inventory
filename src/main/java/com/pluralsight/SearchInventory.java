@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class SearchInventory {
 
@@ -12,12 +13,51 @@ public class SearchInventory {
 
     public static void main(String[] args) {
         ArrayList<Product> inventory = getInventory();
+        Scanner scanner = new Scanner(System.in);
+
+        boolean isDone = false;
+        while (!isDone) {
+            System.out.println("\nWhat do you want to do?");
+            System.out.println("1) List all products");
+            System.out.println("2) Lookup a product by its id");
+            System.out.println("3) Find all products within a price range");
+            System.out.println("4) Add a new product");
+            System.out.println("5) Quit the application");
+
+            int command = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (command){
+                case 1:
+                    //list all products
+                    for (Product product : inventory) {
+                        System.out.println(product);
+                    }
+                    break;
+                case 2:
+                    //Lookup a product by its id
+                    break;
+                case 3:
+                    //Find all products within a price range
+                    break;
+                case 4:
+                    //Add a new product
+                    break;
+                case 5:
+                    System.out.println("Goodbye");
+                    isDone = true;
+                    break;
+                default:
+                    System.out.println("Invalid Command");
+                    break;
 
 
 
-        for (Product product : inventory) {
-            System.out.println(product);
+            }
         }
+
+
+
 
     }
 
